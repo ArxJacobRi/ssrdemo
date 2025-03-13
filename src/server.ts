@@ -42,7 +42,7 @@ app.use(
  */
 app.use('/**', (req, res, next) => {
   angularApp
-    .handle(req)
+    .handle(req, { hello: 'world!' })
     .then((response) =>
       response ? writeResponseToNodeResponse(response, res) : next(),
     )
